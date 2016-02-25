@@ -1,0 +1,56 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>styles</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../../common/js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="../../common/js/ui/skynetUI.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnOpenDialog").click(function () {
+                openDialog("../shadow/skynetShadowBox.html", "测试表单");
+            });
+            $("#btnThought").click(function () {
+                skynetDialog.through({
+                    title: '操作提示',
+                    content: "<div>this is test</div>",
+                    foot: true,
+                    width: 550,
+                    height: 180,
+                    ok: true,
+                    cancel: true,
+                    resize:true,
+                    button: [
+                        {
+                            id: "btnTest1",
+                            text: "test",
+                            click: function () {
+                                alert(11111);
+                                return false;
+                            },
+                            className: "btn btn-blue btn-sm"
+                        }
+                    ]
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<body style="background-color: rgba(255, 255, 255, 0);">
+<div class='container' style="width: 100%;">
+    <div class="panel panel-info" style="margin: 10px;background-color: rgba(0, 0, 0, 0.3);border: none;">
+        <div class="panel-heading" style="color: #FFFFFF; background-color: rgba(0, 0, 0, 0.3);">
+            <h3 class="panel-title form-panel">对话框/h3>
+        </div>
+        <div class="panel-body">
+            <div style="background-color: white;padding: 5px;height: 50px;">
+                <button type="button" id="btnOpenDialog" class="btn btn-edit icofont-eye-open">iframe对话框</button>
+                <button type="button" id="btnThought" class="btn btn-edit icofont-edit">对话框</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

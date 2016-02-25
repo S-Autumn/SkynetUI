@@ -1,0 +1,1266 @@
+@font-face {
+    font-family: "FontAwesome";
+    src: url('../font/fontawesome-webfont.eot');
+    src: url('../font/fontawesome-webfont.eot?#iefix') format('eot'), url('../font/fontawesome-webfont.woff') format('woff'), url('../font/fontawesome-webfont.ttf') format('truetype'), url('../font/fontawesome-webfont.svg#FontAwesome') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*************************************************************form样式开始******************************************************/
+.innerPage{
+    padding: 10px 5px 10px 5px;
+    height: 100%;
+}
+.innerPage>form{
+    width: 100%;
+    padding: 0px 0px;
+    margin: 0px 0px;
+}
+
+.form-table {
+    width: 100%;
+    height: 100%;
+    padding: 0 0;
+    margin: 0 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.form-table > tbody > tr {
+    padding: 0 0;
+}
+
+.form-table > tbody > tr > td {
+    padding: 0 0;
+}
+
+
+.form-row {
+    margin-bottom: 5px;
+    height: 32px;
+}
+
+.form-panel {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form-col {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    float: left;
+    margin: 0;
+    display: inline-block;
+}
+
+.form-col2 {
+    width: 50%;
+    height: 100%;
+    text-align: left;
+    float: left;
+    margin: 0;
+    display: inline-block;
+}
+
+.form-col3 {
+    width: 33%;
+    height: 100%;
+    text-align: left;
+    float: left;
+    margin: 0;
+    display: inline-block;
+}
+
+.form-title {
+    font-size: 13px;
+    height: 28px;
+    text-align: right;
+    font-weight: bold;
+    float: left;
+    margin: 2px;
+    line-height: 28px;
+    min-width: 45px;
+    max-width: 135px;
+    width: 100px;
+    word-wrap: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    overflow: hidden;
+    vertical-align: middle;
+    font: 'Microsoft Yahei';
+}
+
+.form-title:after {
+    content: '： ';
+}
+
+.form-content {
+    height: 28px;
+    float: left;
+    margin: 2px;
+}
+
+.form-content > * {
+    min-width: 80px;
+    width: 200px;
+    display: inline-block;
+}
+
+.form-content > .form-scope:first-child {
+    width: 257px;
+    display: inline-block !important;
+}
+
+.form-content > .form-scope:not(:first-child) {
+    width: 258px;
+    display: inline-block !important;
+}
+
+.form-fieldset {
+    border: solid 1px #ECECEC;
+    border-radius: 6px;
+    padding: 7px;
+    margin: 2px;
+}
+
+.form-fieldset > legend {
+    width: auto;
+    border: none;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: #BDBDBD;
+}
+
+*[disabled='disabled'] {
+    background-color: #EAEAEA;
+}
+
+/*************************************************************form样式结束******************************************************/
+
+/*************************************************************grid样式开始******************************************************/
+.skynetGrid {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ccc;
+    table-layout: fixed;
+    overflow: hidden;
+}
+
+.skynetGrid > thead > tr,
+.skynetGrid > thead > tr > th,
+.skynetGrid > tbody > tr,
+.skynetGrid > tbody > tr > td {
+    width: 100%;
+    height: 100%;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    border: none;
+}
+
+.skynetGridBoxDiv {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.skynetGridShadowDiv {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(41, 40, 38, 0.18);
+    position: absolute;
+    z-index: 999;
+    left: 0px;
+    top: 0px;
+}
+
+.skynetGridContainer {
+    width: 100%;
+    height: 100%;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
+.skynetGridContainer > tbody > tr > td {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    border-top: 1px solid #ccc;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.skynetGridToolBar {
+    width: 100%;
+    height: 36px;
+    min-height: 36px;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    border: none;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.skynetGridHeadContent {
+    width: 100%;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    background-color: #F2F2F2;
+}
+
+.skynetGridHead {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    border: none;
+}
+
+.skynetGridBody {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    border: none;
+    position: relative;
+}
+
+.skynetGridTable {
+    table-layout: auto;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-bottom: none;
+}
+
+.skynetGridTable > thead > tr > th {
+    height: 34px;
+    min-width: 40px;
+    line-height: 12px;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    color: #555;
+    font-size: 14px;
+    font-weight: bold;
+    vertical-align: middle;
+    text-align: center;
+    word-wrap: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    overflow: hidden;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.skynetGridTable > tbody > tr > td {
+    height: 30px;
+    min-width: 40px;
+    line-height: 12px;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    font-size: 12px;
+    vertical-align: middle;
+    text-align: center;
+    word-wrap: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    overflow: hidden;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.skynetEditGrid > tbody > tr {
+    background-color: #fcfaf1;
+}
+
+.skynetHoverTab > tbody > tr:hover {
+    background-color: rgba(224, 245, 255, 0.70) !important;
+}
+
+.skynetStripedTab > tbody > tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.skynetEditGridStripedTab > tbody > tr:nth-child(odd) {
+    background-color: rgba(255, 245, 230, 0.7);
+}
+
+.skynetGridSelectRow {
+    background-color: rgba(235, 230, 255, 0.7) !important;
+}
+
+.skynetGridFoot {
+    position: relative;
+    width: 100%;
+    min-height: 38px;
+    height: 38px;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    border: none;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.skynetGridFootTable,
+.skynetGridFootTable > tbody > tr > td {
+    width: 100%;
+    height: 100%;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+.skynetPagerBar {
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    top: 10%;
+}
+
+.skynetGridCkColumn {
+    text-align: center;
+    width: 40px;
+    min-width: 40px;
+    max-width: 40px;
+}
+
+.skynetGridIndexColumn {
+    text-align: center;
+    width: 40px;
+    min-width: 40px;
+}
+
+.skynetGridContent {
+    line-height: 14px;
+    border: none;
+    padding: 1px 2px 1px 2px;
+    margin: 0 auto 0 auto;
+    word-wrap: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.skynetGridContentTips {
+    background-color: white;
+    display: inline-block;
+    position: absolute;
+    width: 250px;
+    height: 80px;
+    min-width: 250px;
+    min-height: 80px;
+    border: 1px solid #e5e5e5;
+}
+
+.skynetEditGridTextArea {
+    display: inline-block;
+    width: 250px;
+    height: 80px;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    background-color: #ffffff;
+    background-image: none;
+    border: none;
+    vertical-align: middle;
+    line-height: 1.428571429;
+    font-size: 12px;
+    color: #555555;
+    font-family: 'Microsoft Yahei';
+    word-spacing: normal;
+    overflow: auto;
+}
+
+.skynetEditGridTextArea:hover,
+.skynetEditGridTextArea:focus {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    border-color: #66afe9;
+    outline: 0;
+}
+
+.skynetGridTextDiv {
+    display: inline;
+    position: absolute;
+    bottom: 0;
+    float: right;
+    width: auto;
+    height: 1px;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    z-index: -99999;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    border: none;
+    -moz-opacity: 0; /*Firefox*/
+    opacity: 0; /*Opera*/
+    filter: alpha(opacity=0); /*IE*/
+}
+
+/*************************************************************grid样式结束******************************************************/
+
+/*************************************************************分页栏样式开始******************************************************/
+.skynetPager {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.skynetPager ul {
+    margin: 0 0 0 0;
+}
+
+.skynetPagerTips {
+    display: inline-block;
+    text-align: right;
+    position: relative;
+    font-size: 12px;
+    line-height: 12px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 4px;
+    font-weight: bold;
+}
+
+.skynetPagerTips input {
+    display: inline-block;
+    width: 45px;
+    height: 24px;
+    padding: 0;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    margin: 0 2px;
+    color: #000000;
+}
+
+.skynetPagerTips input:hover,
+.skynetPagerTips input:focus {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    border-color: #66afe9;
+    outline: 0;
+}
+
+.skynetPagerTips button {
+    display: inline-block;
+    width: 34px;
+    height: 24px;
+    padding: 0;
+    cursor: pointer;
+    margin-top: 0px;
+    font-weight: bold;
+}
+
+.skynetPagerTips button:hover,
+.skynetPagerTips button:focus {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    border-color: #66afe9;
+    outline: 0;
+    color: #2a6496;
+    background-color: #ffffff;
+}
+
+.skynetPagerTips button:active {
+    color: #ffffff;
+    background-color: #428bca;
+}
+
+.skynetPagerTips select {
+    display: inline-block;
+    width: 55px;
+    height: 24px;
+    padding: 0;
+    margin: 0 2px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    color: #000000;
+}
+
+.skynetPagerTips select:hover,
+.skynetPagerTips select:focus {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    border-color: #66afe9;
+    outline: 0;
+}
+
+.skynetPagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 5px 0;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.skynetPagination > li {
+    display: inline;
+}
+
+.skynetPagination > li > a,
+.skynetPagination > li > span {
+    position: relative;
+    float: left;
+    padding: 5px 10px;
+    font-size: 12px;
+    margin-left: -1px;
+    line-height: 1.4;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    font-family: 'Microsoft Yahei';
+    color: #2a6496;
+}
+
+.skynetPagination > li > select {
+    position: relative;
+    float: left;
+    font-size: 12px;
+    margin-left: 1px;
+    margin-right: 2px;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    height: 28px;
+    font-family: 'Microsoft Yahei';
+    border: 1px solid #ccc;
+    color: #000000;
+}
+
+.skynetPagination > li > select:hover,
+.skynetPagination > li > select:focus {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    border-color: #66afe9;
+    outline: 0;
+}
+
+.skynetPagination > li:first-child > a,
+.skynetPagination > li:first-child > span {
+    margin-left: 0;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.skynetPagination > li:last-child > a,
+.skynetPagination > li:last-child > span {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.skynetPagination > li > a:hover,
+.skynetPagination > li > span:hover,
+.skynetPagination > li > a:focus,
+.skynetPagination > li > span:focus {
+    background-color: #eeeeee;
+    color: #2a6496;
+}
+
+.skynetPagination > .active > a,
+.skynetPagination > .active > span,
+.skynetPagination > .active > a:hover,
+.skynetPagination > .active > span:hover,
+.skynetPagination > .active > a:focus,
+.skynetPagination > .active > span:focus {
+    z-index: 2;
+    color: #ffffff;
+    cursor: default;
+    background-color: #428bca;
+    border-color: #428bca;
+}
+
+.skynetPagination > .disabled > span,
+.skynetPagination > .disabled > span:hover,
+.skynetPagination > .disabled > span:focus,
+.skynetPagination > .disabled > a,
+.skynetPagination > .disabled > a:hover,
+.skynetPagination > .disabled > a:focus {
+    color: #999999;
+    cursor: not-allowed;
+    background-color: #ffffff;
+    border-color: #dddddd;
+}
+
+/**********************************************************分页栏样式结束*********************************************************/
+
+/*******************************************************拖拽改变大小样式开始*******************************************************/
+.skynetFloat-ReSize-sw {
+    width: 10px;
+    height: 10px;
+    left: 0px;
+    bottom: 0px;
+    background: url("../images/comboTree/resize-sw.png") no-repeat;
+}
+
+.skynetFloat-ReSize-se {
+    width: 10px;
+    height: 10px;
+    right: 0px;
+    bottom: 0px;
+    background: url("../images/comboTree/resize-se.png") no-repeat;
+}
+
+.skynetFloat-ReSize-nw {
+    width: 10px;
+    height: 10px;
+    left: 0px;
+    top: 0px;
+    background: url("../images/comboTree/resize-nw.png") no-repeat;
+}
+
+.skynetFloat-ReSize-ne {
+    width: 10px;
+    height: 10px;
+    right: 0px;
+    top: 0px;
+    background: url("../images/comboTree/resize-ne.png") no-repeat;
+}
+
+.resizeDesktop {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    position: 'fixed';
+}
+
+/*******************************************************拖拽改变大小样式结束*******************************************************/
+
+/*****************************************************skynetComboBox样式开始*****************************************************/
+.skynetComboBox {
+    font-family: 'Microsoft Yahei';
+    position: absolute;
+    border: 1pt solid #cccccc;
+    overflow: auto;
+    background-color: white;
+    background-attachment: local;
+    padding: 5px 5px 5px 5px;
+}
+
+.skynetComboBox:focus,
+.skynetComboBox:hover,
+.skynetComboBox:active {
+    border-color: #66afe9;
+    outline: 0;
+}
+
+.skynetComboBox-hover {
+    border-color: #66afe9;
+    outline: 0;
+}
+
+/*****************************************************skynetComboBox样式结束****************************************************/
+
+/*******************************************************skynetTree样式开始******************************************************/
+.skynetTree {
+    min-width: 80px;
+    min-height: 20px;
+    border: 1px solid #cccccc;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    background-color: #ffffff;
+    overflow: auto;
+}
+
+.skynetComboTree {
+    position: relative;
+    min-width: 80px;
+    min-height: 20px;
+    width: 135px;
+    height: 20px;
+    border: 1px solid #cccccc;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    background-color: #ffffff;
+}
+
+.skynetComboTree:focus,
+.skynetComboTree:hover,
+.skynetComboTree:active {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    border-color: #66afe9;
+    outline: 0;
+}
+
+.skynetComboTree-Hover {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    border-color: #66afe9;
+    outline: 0;
+}
+
+.skynetComboTree-Text {
+    padding: 2px 5px 2px 5px;
+    margin: 0 0 0 0;
+    float: left;
+    min-height: 12px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    font-family: 'Microsoft Yahei';
+    font-size: 12px;
+    word-wrap: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    overflow: hidden;
+}
+
+.skynetComboTree-Clear {
+    position: absolute;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    width: 18px;
+    max-width: 18px;
+    min-width: 18px;
+    right: 18px;
+    display: inline-block;
+    text-align: center;
+}
+
+.skynetComboTree-Icon {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    width: 18px;
+    max-width: 18px;
+    min-width: 18px;
+    float: right;
+    display: inline-block;
+    text-align: center;
+}
+
+.skynetComboTree-Clear:before {
+    content: "\f0e2";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: inherit;
+}
+
+.skynetComboTree-Icon:before {
+    content: "\f0dd";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: inherit;
+}
+
+.skynetComboTree-Clear:focus,
+.skynetComboTree-Icon:focus,
+.skynetComboTree-Clear:hover,
+.skynetComboTree-Icon:hover {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(60, 60, 60, 0.6);
+    border-color: #66afe9;
+    outline: 0;
+}
+
+.skynetComboTree-Clear:active,
+.skynetComboTree-Icon:active {
+    box-shadow: none;
+    border-color: none;
+    background-color: #F1F1F1;
+    outline: 1;
+}
+
+.skynetComborTree-disabled {
+    background-color: #eeeeee;
+    color: #555555;
+}
+
+.skynetTree-RMenu {
+    font-family: 'Microsoft Yahei';
+    position: absolute;
+    border: 1pt solid #cccccc;
+    overflow: hidden;
+    background-color: white;
+    background-attachment: local;
+    padding: 5px 5px 5px 5px;
+}
+
+.skynetTree-RNode {
+    background-color: #B0DEFF;
+    border: 1px #51AFFF solid;
+}
+
+/*******************************************************skynetTree样式结束******************************************************/
+
+/***********************************************************遮罩层样式开始********************************************************/
+.skynetShadow {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    background-color: black;
+    opacity: 0.45;
+    filter: alpha(opacity=45);
+}
+
+.skynetShadow-White {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgba(241, 239, 235, 0.92);
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+}
+
+.skynetShadowMsg {
+    display: inline-block;
+    width: 50px;
+    height: 10px;
+    background: url("../images/shadowMsg/loading2.gif") no-repeat scroll center;
+    position: absolute;
+}
+
+.skynetShadowBox-Wait-Shadow {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgba(41, 40, 38, 0.18);
+    -moz-opacity: 0.6;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+}
+
+.skynetShadowBox-Wait-Msg {
+    position: absolute;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 0;
+    background-image: url(../images/shadowMsg/loading.gif);
+}
+
+/***********************************************************遮罩层样式结束********************************************************/
+
+/***********************************************************对话框样式开始*********************************************************/
+.skynetDialog-wrap {
+    background-color: #ffffff;
+    padding: 0 0 0 0;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    outline: none;
+    display: inline-block;
+    position: absolute;
+    overflow: hidden;
+    min-width: 250px;
+    min-height: 150px;
+}
+
+.skynetDialog-head {
+    border-radius: 6px 6px 0px 0px;
+    padding: 4px 15px;
+    border: 0;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 28px;
+    min-height: 28px;
+    max-height: 28px;
+}
+
+.skynetDialog-title {
+    margin: 0;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: bolder;
+    color: #ffffff;
+}
+
+.skynetDialog-close {
+    float: right;
+    text-shadow: 0 1px 0 #ffffff;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    padding: 0;
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+    -webkit-appearance: none;
+    display: inline-block;
+    line-height: 28px
+}
+
+.skynetDialog-close:hover {
+    color: #000000;
+    text-decoration: none;
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+}
+
+.skynetDialog-close > i {
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.skynetDialog-body {
+    padding: 15px;
+    border: 0;
+    margin: 0;
+    background-color: #ffffff;
+    display: block;
+    min-height: 40px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skynetDialog-foot {
+    text-align: right;
+    padding: 6px;
+    margin-bottom: 0;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    border-radius: 0 0 6px 6px;
+    box-shadow: inset 0 1px 0 #ffffff;
+    overflow: hidden;
+    display: block;
+    position: relative;
+}
+
+.skynetDialogShadow-Inner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+    opacity: 0.75;
+    filter: alpha(opacity=75);
+}
+
+.skynetDialogShadow-Wait {
+    position: absolute;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 0;
+    background-image: url(../images/shadowMsg/loading.gif);
+}
+
+.skynetDialogShadow-Screen {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+}
+
+.skynetBlue {
+    background-color: #428bca;
+}
+
+.skynetMessager {
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+/***********************************************************对话框式结束*********************************************************/
+
+/***********************************************************验证样式开始*********************************************************/
+.skynetErrorTips {
+    border-color: #d87166 !important;
+    border-width: 2px !important;
+    box-shadow: 1px 0.5mm 0.5mm 1px #c0c0c0;
+    font-weight: 900;
+    padding: 1px 0px 1px 0px;
+    min-width: 120px;
+    max-width: 250px;
+}
+
+.skynetPopOver {
+    padding: 1px 3px 1px 3px;
+    text-align: center;
+    vertical-align: middle;
+    border: 0px;
+    overflow: hidden;
+    resize: none;
+    word-wrap: break-word !important;
+    word-break: break-all !important;
+    word-spacing: normal !important;
+    white-space: normal;
+}
+
+.skynetDialog-Reg {
+    word-wrap: break-word;
+    word-break: break-all;
+    word-spacing: normal;
+    white-space: normal;
+}
+
+.skynet-CheckError {
+    background: url("../images/bootstrap/error.png") no-repeat scroll right 2px center rgba(0, 0, 0, 0) !important;
+    padding-right: 20px !important;
+}
+
+.skynet-CheckSuccess {
+    background: url("../images/bootstrap/pass.png") no-repeat scroll right 2px center rgba(0, 0, 0, 0) !important;
+    padding-right: 20px !important;
+}
+
+.skynet-CheckError-Border {
+    border: 1px solid rgb(255, 169, 169) !important;
+    webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 169, 169, 0.6) !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 169, 169, 0.6) !important;
+}
+
+.skynet-CheckSuccess-Border {
+    border: 1px solid rgb(162, 209, 174) !important;
+    webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(162, 209, 174, 0.6) !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(162, 209, 174, 0.6) !important;
+}
+
+.skynet-CheckError-Time {
+    background: url(../images/bootstrap/date-ico.png) no-repeat right center, url("../images/bootstrap/error.png") no-repeat scroll right 20px center rgba(0, 0, 0, 0) !important;
+    padding-right: 40px !important;
+}
+
+.skynet-CheckSuccess-Time {
+    background: url(../images/bootstrap/date-ico.png) no-repeat right center, url("../images/bootstrap/pass.png") no-repeat scroll right 20px center rgba(0, 0, 0, 0) !important;
+    padding-right: 40px !important;
+}
+
+.skynet-CheckError-Select {
+    background: url("../images/bootstrap/error.png") no-repeat scroll right 19px center rgba(0, 0, 0, 0) !important;
+}
+
+.skynet-CheckSuccess-Select {
+    background: url("../images/bootstrap/pass.png") no-repeat scroll right 19px center rgba(0, 0, 0, 0) !important;
+}
+
+.skynetTipsTop {
+    border-top-color: #d87166 !important;
+}
+
+.skynetTipsTop:after {
+    bottom: 2px !important;
+}
+
+.skynetTipsBottom {
+    border-bottom-color: #d87166 !important;
+}
+
+.skynetTipsBottom:after {
+    top: 2px !important;
+}
+
+.skynetTipsLeft {
+    border-left-color: #d87166 !important;
+}
+
+.skynetTipsLeft:after {
+    right: 2px !important;
+}
+
+.skynetTipsRight {
+    border-right-color: #d87166 !important;
+}
+
+.skynetTipsRight:after {
+    left: 2px !important;
+}
+
+/***********************************************************验证样式结束*********************************************************/
+
+/*********************************************************通用通知默认样式开始******************************************************/
+.skynetTipsBody {
+    background-color: gray;
+}
+
+.skynetTipsDivCenter {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.skynetTipsWrap {
+    width: 800px;
+    height: auto;
+    border: 1px solid #808080;
+    background-Color: #FFFFFF;
+    padding: 80px 25px 60px 25px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    box-shadow: 1px 3px 10px 3px #4f4f4f;
+}
+
+.skynetTipsTitle {
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+}
+
+.skynetTipsTask {
+    font-size: 20px;
+}
+
+.skynetTips-table {
+    width: 100%;
+}
+
+.skynetTips-table tr {
+    width: 100%;
+    height: 32px;
+    padding: 0;
+}
+
+.skynetTips-table td {
+    width: auto;
+}
+
+/*********************************************************通用通知默认样式结束******************************************************/
+
+/***********************************************************公共样式开始*********************************************************/
+.form-datetime{
+    display: inline-block;
+    width: 100%;
+    height: 28px;
+    padding: 0px 3px;
+    font-size: 12px;
+    line-height: 1.428571429;
+    color: #555555;
+    vertical-align: middle;
+    background:url(../images/bootstrap/date-ico.png) no-repeat right center;
+    border: 1px solid #e5e5e5;
+}
+.form-datetime:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.skynetfontCenter {
+    text-align: center !important;
+}
+
+.skynetfontRight {
+    text-align: right !important;
+}
+
+.skynetfontMiddle {
+    vertical-align: middle !important;
+}
+
+.skynetfontTop {
+    vertical-align: top !important;
+}
+
+.skynetfontbold {
+    font-weight: bold !important;
+}
+
+.skynetfontLeft {
+    text-align: left;
+}
+
+.skynetfontRight {
+    text-align: right;
+}
+
+.shadowDiv {
+    z-index: -100;
+    background-color: gray;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+
+.table_font {
+    text-align: right;
+    font-weight: lighter;
+    color: #999;
+    vertical-align: middle;
+    font-size: 12px;
+}
+
+.pull-right a {
+    color: #555;
+}
+
+.pull-right a:hover {
+    color: #555;
+    text-decoration: none;
+}
+
+.btn-primary {
+    color: #ffffff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active,
+.btn-primary.active, .open .dropdown-toggle.btn-primary {
+    color: #ffffff;
+    background-color: #3276b1;
+    border-color: #285e8e;
+}
+
+.adisabled {
+    text-decoration: none;
+    color: #afafaf;
+    outline: 0 none;
+    cursor: default;
+}
+
+.adisabled:hover {
+    text-decoration: none;
+    color: #afafaf;
+    outline: 0 none;
+    cursor: default;
+}
+
+.queryDiv {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.queryDiv table th {
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Microsoft Yahei';
+    color: #555;
+}
+
+.contentDiv {
+    width: 100%;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    padding: 0 !important;
+}
+
+.disabledOverflowX {
+    overflow: auto !important;
+    overflow-x: hidden !important;
+}
+
+.disabledOverflowY {
+    overflow: auto !important;
+    overflow-y: hidden !important;
+}
+
+.enableOverflowX {
+    overflow: auto !important;
+    overflow-x: scroll !important;
+}
+
+.enableOverflowY {
+    overflow: auto !important;
+    overflow-y: scroll !important;
+}
+
+/***********************************************************公共样式结束*********************************************************/

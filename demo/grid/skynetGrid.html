@@ -1,0 +1,249 @@
+﻿<!DOCTYPE>
+<html>
+<head>
+    <title>静态分页Grid</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../common/otherUIs/z-tree/css/zTreeStyle/zTreeStyle.css"/>
+    <script type="text/javascript" src="../../common/js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="../../common/otherUIs/z-tree/jquery.ztree.all-3.5.js"></script>
+    <script type="text/javascript" src="../../common/js/ui/skynetUI.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var bigdata= {rows:[],ck:[]};
+            var createBigData =function(){
+                var idx = 0
+                for(;idx<10000;idx++){
+                    var data={
+                            "zzmmdm": "01"+"_"+idx,
+                            "zzmm": "中国共产党党员"+"_"+idx,
+                            "jybh": Math.random(),
+                            "xm": "陈育宝"+"_"+idx,
+                            "sfzh": Math.random(),
+                            "xbdm": "1",
+                            "xb": "男",
+                            "csrq": new Date().format("yyyy-MM-dd HH:mm:ss"),
+                            "jh": Math.random(),
+                            "jxdm": Math.random(),
+                            "jx": Math.random(),
+                            "dwdm": Math.random(),
+                            "gzdw": Math.random(),
+                            "zzmmmc": Math.random(),
+                            "xbmc": "男",
+                            "gzdwmc": Math.random(),
+                            "jxmc": "一级警督"+"_"+idx,
+                            "sx": "0301"+"_"+idx,
+                            "dazt": "未申报",
+                            "jcdazt": "完成申报",
+                            "jwmc": "uuuuuuuu"+"_"+idx,
+                            "rksj": ""
+                    };
+                    bigdata.rows.push(data);
+                }
+            };
+
+            //TODO 代码-功能 预览（使用jquery相关插件）
+            var viewGrid = new SkynetGrid($('#viewGrid'), {
+                autoCreate: true,
+                url: "data.json",
+                pager: {pageType: 0},
+                isEdit: false,
+                isToolbar: true,
+                fieldId: 'sfzh',
+                columns: [
+                    {title: "主要信息", field: "aaa",
+                        childs: [
+                            {
+                                title: "个人信息", field: "grxx",
+                                childs: [
+                                    {field: 'xm', title: '姓名', width: '100px', columnEdit: false,
+                                        formatter: function (val, row, index) {
+                                            return $("<a href=\"#\">" + val + "</a>");
+                                        }
+                                    },
+                                    {field: 'xbmc', title: '性别', width: '50px'},
+                                    {field: 'sfzh', title: '身份证号', width: '150px'}
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        title: "其他信息", field: "qtxx",
+                        childs: [
+                            {field: 'jxmc', title: '警衔', width: '80px'},
+                            {field: 'xrzw', title: '职务', width: '100px', rowAlign: "left"},
+                            {field: 'zzmmmc', title: '政治面貌', width: '150px', rowAlign: "left"},
+                            {field: 'gzdwmc', title: '单位名称', width: '1990px', rowAlign: "left"}
+                        ]
+                    }
+                ],
+                tools: [
+                    {
+                        content: '<button type="button">刷新</button>',//内容
+                        id: "refreshBtn",//工具的id
+                        name: "refreshBtn",//工具的id
+                        class: "btn btn-green btn-sm",//工具的CSS
+                        events: {
+                            "click": function () {
+                                skynetGrid("#viewGrid").refresh();
+                            }
+                        }
+                    },
+                    {
+                        content: '<button type="button">重加载</button>',//内容
+                        id: "reLoadBtn",//工具的id
+                        name: "reLoadBtn",//工具的id
+                        class: "btn btn-lssued icofont-arrow-down",//工具的CSS
+                        events: {
+                            "click": function () {
+                                skynetGrid("#viewGrid").reload();
+                            }
+                        }
+                    },
+                    {
+                        content: '<button type="button">选中指定数据</button>',//内容
+                        id: "checkBtn",//工具的id
+                        name: "checkBtn",//工具的id
+                        class: "btn btn-submit icofont-check",//工具的CSS
+                        events: {
+                            "click": function () {
+                                skynetGrid("#viewGrid").fn("checkRow", "53000020140703012984", true);
+                            }
+                        }
+                    },
+                    {
+                        content: '<button type="button">获得指定数据</button>',//内容
+                        id: "checkBtn",//工具的id
+                        name: "checkBtn",//工具的id
+                        class: "btn btn-submit icofont-check",//工具的CSS
+                        events: {
+                            "click": function () {
+                                var grid = skynetGrid("#viewGrid");
+                                grid.fn("getSelectRow");
+                                grid.fn("getRow", "532327198207180511");
+                                grid.fn("getCheckData");
+                                grid.fn("getAddData");
+                                grid.fn("getChangeData");
+                                grid.fn("getRemoveData");
+                            }
+                        }
+                    }
+                ]
+            });
+            var treeData = [{"id":"中国共产党党员","pid":"","name":"中国共产党党员"},
+                    {"id":"群众","pid":"","name":"群众"}]
+            var editGrid = new SkynetGrid($('#editGrid'), {
+                autoCreate: true,
+                url: 'data.json',
+                pager: {pageType: 0},
+                mode: 'edit',
+                isToolbar: true,
+                fieldId: 'sfzh',
+                columns: [
+                    {field: 'xm', title: '姓名', width: '100px', columnEdit: false,
+                        formatter: function (val, row, index) {
+                            var html = "<a href=\"#\">" + val + "</a>";
+                            return $(html);
+                        }
+                    },
+                    {field: 'xbmc', title: '性别', width: 'auto',
+                        formatter: function (val, row, index) {
+                            var $html = $('<select class="form-control" >' +
+                                    '<option  value="">请选择</option>' +
+                                    '<option  value="男">男</option>' +
+                                    '<option  value="女">女</option>' +
+                                    '<select>');
+                            $html.val(val);
+                            $html[0].style.cssText = "display:inline-block;width:100%;padding:0 0 0 0;margin:0 0 0 0;";
+                            return $html;
+                        }
+                    },
+                    {field: 'sfzh', title: '身份证号', width: '150px',columnEdit:true},
+                    {field: 'jxmc', title: '警衔', width: '80px'},
+                    {field: 'xrzw', title: '职务', width: '100px', rowAlign: "left"},
+                    {field: 'zzmmmc', title: '政治面貌', width: '170px', rowAlign: "left",
+                        formatter: function (val, row, index,setTitle) {
+                            var $tree = $('<div name="zzmmtree" data-skynetTree data-svalue="'+val+'" style="width: 100%"></div>');
+                            $tree.skynetTree({data:clone(treeData),isCheck:true,onCreateSuccess:function(){
+                                setTitle(this.fn('getText'));
+                            }});
+                            return $tree;
+                        }
+                    },
+                    {field: 'gzdwmc', title: '单位名称', width: '100px', rowAlign: "left"}
+                ],
+                tools: [
+                    {
+                        content: '<button type="button">添加</button>',//内容
+                        id: "addBtn",//工具的id
+                        name: "addBtn",//工具的id
+                        class: "btn btn-add icofont-plus btn-sm",//工具的CSS
+                        events: {
+                            "click": function (e) {
+                                e.data.fn("addRow",{});
+                            }
+                        }
+                    },
+                    {
+                        content: '<button type="button">删除</button>',//内容
+                        id: "removeBtn",//工具的id
+                        name: "removeBtn",//工具的id
+                        class: "btn btn-delete icofont-minus btn-sm",//工具的CSS
+                        events: {
+                            "click": function (e) {
+                                e.data.fn("removeRow",'aaa_2');
+                            }
+                        }
+                    },
+                    {
+                        content: '<button type="button">变更</button>',//内容
+                        id: "changeBtn",//工具的id
+                        name: "changeBtn",//工具的id
+                        class: "btn btn-edit icofont-edit",//工具的CSS
+                        events: {
+                            "click": function (e) {
+                                e.data.fn("changeRow", "532328198212160511", {sfzh: Math.random()});
+                            }
+                        }
+                    },
+                    {
+                        content: '<button type="button">刷新</button>',//内容
+                        id: "refreshBtn",//工具的id
+                        name: "refreshBtn",//工具的id
+                        class: "btn btn-green btn-sm",//工具的CSS
+                        events: {
+                            "click": function (e) {
+                                e.data.refresh();
+                            }
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+</head>
+<body style="background-color: rgba(255, 255, 255, 0);">
+<div class='container' style="width: 100%;">
+    <div class="panel panel-info" style="margin: 10px;background-color: rgba(0, 0, 0, 0.3);border: none;">
+        <div class="panel-heading" style="color: #FFFFFF; background-color: rgba(0, 0, 0, 0.3);">
+            <h3 class="panel-title form-panel">数据只读列表</h3>
+        </div>
+        <div class="panel-body">
+            <div style="background-color: white;">
+                <table id="viewGrid" style="width:100%;height: 100%;"></table>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-info" style="margin: 10px;background-color: rgba(0, 0, 0, 0.3);border: none;">
+        <div class="panel-heading" style="color: #FFFFFF; background-color: rgba(0, 0, 0, 0.3);">
+            <h3 class="panel-title form-panel">数据可编辑列表</h3>
+        </div>
+        <div class="panel-body">
+            <div style="background-color: white;">
+                <table id="editGrid" style="width:100%;height: 100%;"></table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

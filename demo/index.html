@@ -1,0 +1,185 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>skynetUI</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common/otherUIs/z-tree/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="portal/css/index.css" type="text/css">
+    <script type="text/javascript" src="../common/js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="../common/js/ui/skynetUI.js"></script>
+    <script type="text/javascript" src="../common/otherUIs/z-tree/jquery.ztree.all-3.5.js"></script>
+    <script type="text/javascript" src="../common/otherUIs/datetimepicker/jquery-ui-timepicker-addon.js"></script>
+    <script type="text/javascript" src="../common/otherUIs/datetimepicker/jquery-ui-timepicker-zh-CN.js"></script>
+    <script type="text/javascript" src="portal/js/menu.js"></script>
+    <script type="text/javascript" src="portal/js/login.js"></script>
+</head>
+<body onselectstart="return false">
+<table class="form-table">
+    <tbody>
+    <tr>
+        <td style="height: 80px;">
+            <div class="head">
+                <span class="white font-36">SkynetUI</span>
+                <div class="headToolBar">
+                    <img src="portal/img/user.png">
+                    <a id="loginIn" href="#" click="showLoginDialog()">登录</a>
+                    <a id="useName" href="#"></a>
+                    <a id="loginOut" href="sys/logOut" style="padding-left:10px;display: none;">登出</a>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div style="width: 100%;height: 100%;position: relative;">
+                <div class="menuBg" style="height: 100%;"></div>
+                <div class="menuBar" style="height: 100%;" data-open="">
+                    <div class="menuLine" style="height: 100%;">
+                        <div class="menuLive"><img src="portal/img/menu-sc.png"></div>
+                        <ul id="menuGroups">
+                            <li title="数据列表" data-group="001" style=""><img src="portal/img/ds.png"></li>
+                            <li title="表单组件" data-group="002" style=""><img src="portal/img/gl.png"></li>
+                            <li title="HTML5绘图" data-group="003" style="background-color: rgb(236, 236, 236);"><img src="portal/img/ys.png"></li>
+                        </ul>
+                    </div>
+                    <div class="menuContain menu-out" style="width: 0px; display: block;">
+                        <div class="menu" style="display: none;">
+                            <table class="form-table" style="border-left:1px solid #656565;border-right:1px solid #656565;">
+                                <tbody>
+                                <tr>
+                                    <td style="height:25px;">
+                                        <div name="menu_up" class="menu-scroll" style="text-align: center;">
+                                            <i class="icofont-chevron-up"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="menu-zone">
+                                            <div class="menu-content">
+                                                <ul class="menu-ul">
+                                                    <li class="menu-item">
+                                                        <div class="menu-item-group puke" data-group="001" >数据列表
+                                                        </div>
+                                                        <div style="display: none" class="menu-item-content">
+                                                            <ul style="min-height: 100px;">
+                                                                <li name="menuBtn" data-url="grid/skynetGrid.html" data-text="数据列表>> 数据列表">
+                                                                    <a href="#">数据列表</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <div class="menu-item-group blue" data-group="002">表单组件
+                                                        </div>
+                                                        <div style="display: none" class="menu-item-content">
+                                                            <ul style="min-height: 100px;">
+                                                                <li name="menuBtn" data-url="shadow/skynetShadowBox.html" data-text="表单组件>> 遮罩">
+                                                                    <a href="#">遮罩</a>
+                                                                </li>
+                                                                <li name="menuBtn" data-url="dialog/skynetDialog.html" data-text="表单组件>> 对话框">
+                                                                    <a href="#">对话框</a>
+                                                                </li>
+                                                                <li name="menuBtn" data-url="tree/skynetTree.html" data-text="表单组件>> 下拉树">
+                                                                    <a href="#">下拉树</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <div class="menu-item-group green" data-group="003">HTML5绘图
+                                                        </div>
+                                                        <div style="display: none" class="menu-item-content">
+                                                            <ul style="min-height: 100px;">
+                                                                <li name="menuBtn" data-url="jtopo/skynetTopo.html" data-text="HTML5绘图>> HTML5绘图">
+                                                                    <a href="#">HTML5绘图</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 25px;">
+                                        <div name="menu_down" class="menu-scroll">
+                                            <i class="icofont-chevron-down"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="middle">
+                    <table class="form-table">
+                        <tbody>
+                        <tr>
+                            <td id="navBar" class="navBar">
+                                首页
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 15px;min-height: 10px;">
+                                <div id="appwrap" class="app-wrap-off">
+                                    <div id="appshadow" class="app-shadow"></div>
+                                    <div style="display:none;position: absolute;top: 0;left: 0;width: 100%;height: 15px;">
+                                        <div class="app-Arrow">
+                                            <div id="up" class="app-Arrow-up"><img src="portal/img/up1.png"></div>
+                                        </div>
+                                    </div>
+                                    <div class="app-block" style="display: none;">
+                                        <div class="app-menu red"  name="menuBtn" data-url="grid/skynetGrid.html" data-text="数据列表>> 数据列表">
+                                            <div class="menu-img"><img src="portal/img/menu1.png"></div>
+                                            <div class="menu-word">数据列表</div>
+                                        </div>
+                                        <div class="app-menu blue" name="menuBtn" data-url="shadow/skynetShadowBox.html" data-text="表单组件>> 遮罩">
+                                            <div class="menu-img"><img src="portal/img/menu2.png"></div>
+                                            <div class="menu-word">遮罩</div>
+                                        </div>
+                                        <div class="app-menu green"  name="menuBtn" data-url="dialog/skynetDialog.html" data-text="表单组件>> 对话框">
+                                            <div class="menu-img"><img src="portal/img/menu3.png"></div>
+                                            <div class="menu-word">对话框</div>
+                                        </div>
+                                        <div class="app-menu puke"  name="menuBtn"  data-url="tree/skynetTree.html" data-text="表单组件>> 下拉树">
+                                            <div class="menu-img"><img src="portal/img/menu4.png"></div>
+                                            <div class="menu-word">下拉树</div>
+                                        </div>
+                                        <div class="app-menu cyan"  name="menuBtn" data-url="jtopo/skynetTopo.html" data-text="HTML5绘图>> HTML5绘图">
+                                            <div class="menu-img"><img src="portal/img/menu4.png"></div>
+                                            <div class="menu-word">HTML5绘图</div>
+                                        </div>
+                                    </div>
+                                    <div style="position: absolute; bottom: 0px; left: 0px; width: 100%; height: 15px; display: none;">
+                                        <div class="app-Arrow">
+                                            <div id="down" class="app-Arrow-down"><img src="portal/img/down1.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="detailWrap">
+                                    <div id="detail" class="detail"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div style="display: none">
+    <input type="hidden" id="time" value="<%=time%>">
+</div>
+</body>
+</html>

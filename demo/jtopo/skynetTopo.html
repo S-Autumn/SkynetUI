@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5拓扑图</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../../common/js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="../../common/otherUIs/html5Graph/JTopo.js"></script>
+    <script type="text/javascript" src="../../common/js/ui/skynetUI.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            //TODO 代码-功能 预览（使用jquery相关插件）
+            var canvas = document.getElementById('canvas');
+            var stage = new JTopo.Stage(canvas);
+            var scene = new JTopo.Scene(stage);
+            //scene.backgroundColor="255,240,202";
+            scene.background="Desert.jpg";
+            scene.alpha=1;
+
+            var keyArray=["a","b","c","d","e","f","g","h","i","j","k"];
+            for(var i=0;i<keyArray.length;i++){
+                var key = keyArray[i];
+                var node = new JTopo.Node(i);
+                node.id = key;
+                node.fontColor ="0,0,0"
+                node.setImage('house.png');
+                node.setSize(40,40);
+                scene.add(node);
+            }
+
+            function newLink(nodeA, nodeZ, text){
+                var link = new JTopo.Link(nodeA, nodeZ, text);
+                link.lineWidth = 3; // 线宽
+                link.bundleOffset = 60; // 折线拐角处的长度
+                link.bundleGap = 20; // 线条之间的间隔
+                link.textOffsetY = 3; // 文本偏移量（向下3个像素）
+                link.strokeColor = '0,200,255';
+                link.arrowsRadius = 10;
+                scene.add(link);
+            }
+
+
+            var nodeA = scene.findElements(function(e){ return e.id == "a"; })[0];
+            var nodeB = scene.findElements(function(e){ return e.id == "b"; })[0];
+            var nodeC = scene.findElements(function(e){ return e.id == "c"; })[0];
+            var nodeD = scene.findElements(function(e){ return e.id == "d"; })[0];
+            var nodeE = scene.findElements(function(e){ return e.id == "e"; })[0];
+            var nodeF = scene.findElements(function(e){ return e.id == "f"; })[0];
+            var nodeG = scene.findElements(function(e){ return e.id == "g"; })[0];
+            var nodeH = scene.findElements(function(e){ return e.id == "h"; })[0];
+            var nodeI = scene.findElements(function(e){ return e.id == "i"; })[0];
+            var nodeJ = scene.findElements(function(e){ return e.id == "j"; })[0];
+            var nodeK = scene.findElements(function(e){ return e.id == "k"; })[0];
+            newLink(nodeA,nodeB);
+            newLink(nodeA,nodeC);
+            newLink(nodeA,nodeD);
+            newLink(nodeA,nodeE);
+            newLink(nodeA,nodeF);
+
+            newLink(nodeB,nodeG);
+            newLink(nodeB,nodeI);
+
+            newLink(nodeC,nodeG);
+            newLink(nodeC,nodeH);
+
+            newLink(nodeE,nodeF);
+
+            newLink(nodeF,nodeK);
+
+            newLink(nodeI,nodeJ);
+            newLink(nodeI,nodeK);
+
+            newLink(nodeJ,nodeG);
+
+            JTopo.Layout.layoutGraph(scene, nodeA, -1,null,function(){
+                console.log("开始布局");
+            },function(){
+                console.log("结束布局");
+                var data = JTopo.seriailzeToJSON(stage,function(e){
+                    return;//返回你自己逻辑定义的 业务数据
+                });
+                var canvas3 = document.getElementById('canvas3');
+                JTopo.deSeriailzeByJSON(data,canvas3);
+            });
+
+            var canvas2 = document.getElementById('canvas2');
+            var stage2 = new JTopo.Stage(canvas2);
+            stage2.frames = -24;
+            var scene2 = new JTopo.Scene(stage2);
+            scene2.backgroundColor="255,240,202";
+            scene2.alpha=1;
+            var from = new JTopo.Node({"bottom_center":{"text":"from\naaaaaaa\nbbbbb\ncccc",lineSpace:1}});
+            var to = new JTopo.CircleNode("to");
+            to.radius = 25;
+
+            //from.setLocation(180,200);
+            //to.setLocation(580,200);
+            from.setLocation(200,180);
+            to.setLocation(200,380);
+            from.fontColor = "0,0,0";
+            to.fontColor = "0,0,0";
+            from.setSize(50,50);
+
+            scene2.add(from);
+            scene2.add(to);
+
+            var lineCnt=0;
+            function newLink2(from,to){
+                lineCnt++
+                var link = new JTopo.Link(from, to, "line"+lineCnt);
+                link.lineWidth = 3; // 线宽
+                link.bundleOffset = 60; // 折线拐角处的长度
+                link.bundleGap = 20;
+                link.strokeColor = '0,200,255';
+                link.fontColor = "0,0,0";
+                link.arrowsRadius = 30;
+                scene2.add(link);
+            }
+
+            newLink2(to,from);
+            newLink2(to,from);
+            newLink2(to,from);
+            newLink2(from,to);
+
+            newLink2(to,from);
+            newLink2(from,to);
+            newLink2(from,to);
+            //newLink2(from,to);
+            //newLink2(to,from);
+            //newLink2(to,from);
+
+        });
+    </script>
+</head>
+<body style="background-color: rgba(255, 255, 255, 0);">
+<div class='container' style="width: 100%;">
+    <div class="panel panel-info" style="margin: 10px;background-color: rgba(0, 0, 0, 0.3);border: none;">
+        <div class="panel-heading" style="color: #FFFFFF; background-color: rgba(0, 0, 0, 0.3);">
+            <h3 class="panel-title form-panel">Canvas序列化节点</h3>
+        </div>
+        <div class="panel-body">
+            <div style="margin: 0 auto;text-align: center;">
+                <canvas id="canvas" style="" width="1000" height="500"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-info" style="margin: 10px;background-color: rgba(0, 0, 0, 0.3);border: none;">
+        <div class="panel-heading" style="color: #FFFFFF; background-color: rgba(0, 0, 0, 0.3);">
+            <h3 class="panel-title form-panel">节点文字多连线</h3>
+        </div>
+        <div class="panel-body">
+            <div style="margin: 0 auto;text-align: center;">
+                <canvas id="canvas2" style="" width="1000" height="500"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-info" style="margin: 10px;background-color: rgba(0, 0, 0, 0.3);border: none;">
+        <div class="panel-heading" style="color: #FFFFFF; background-color: rgba(0, 0, 0, 0.3);">
+            <h3 class="panel-title form-panel">Canvas反序列化后重新加载节点</h3>
+        </div>
+        <div class="panel-body">
+            <div style="margin: 0 auto;text-align: center;">
+                <canvas id="canvas3" style="" width="1000" height="500"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

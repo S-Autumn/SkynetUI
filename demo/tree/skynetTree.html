@@ -1,0 +1,84 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>树</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../common/otherUIs/z-tree/css/zTreeStyle/zTreeStyle.css"/>
+    <script type="text/javascript" src="../../common/js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="../../common/js/ui/skynetUI.js"></script>
+    <script type="text/javascript" src="../../common/otherUIs/z-tree/jquery.ztree.all-3.5.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tree1,#tree2,#tree3,#tree4').skynetTree();
+            $('#tree5').skynetTree({isEdit: true, isCheck: true,mode:'normal'});
+            var test = function () {
+                var $A_tree1 = $("#tree1");
+                var nodes1 = $A_tree1.skynetTree("getReNodes");
+                console.log('nodes1:' + nodes1);
+                //获得实际值
+                alert("treeA1=" + $A_tree1.skynetTree("getValue"));
+                //获得显示值
+                alert("treeA1=" + $A_tree1.skynetTree("getText"));
+                //清空值
+                $A_tree1.skynetTree("clear");
+                //刷新树重新请求
+                $A_tree1.skynetTree("refresh");
+                //设置值
+                $A_tree1.skynetTree("setValue", "001,002");
+                //只读
+                $A_tree1.skynetTree("readonly", true);
+                //禁用
+                $A_tree1.skynetTree("disabled", true);
+            };
+        });
+    </script>
+</head>
+<body style="background-color: rgba(255, 255, 255, 0);">
+<div class='container' style="width: 100%;">
+    <div class="panel panel-info" style="margin: 10px;background-color: rgba(0, 0, 0, 0.3);border: none;">
+        <div class="panel-heading" style="color: #FFFFFF; background-color: rgba(0, 0, 0, 0.3);">
+            <h3 class="panel-title form-panel">树</h3>
+        </div>
+        <div class="panel-body">
+            <div style="background-color: white;padding: 5px;height: 150px;">
+                <div class="form-row">
+                    <div class="form-col3">
+                        <div class="form-title" style="width: 55px;">单选</div>
+                        <div class="form-content">
+                            <div id="tree1" class="form-control" style="width: 200px;height: 100%;float: right;" data-sname="tree.code" data-skynetTree data-url="data.json"></div>
+                        </div>
+                    </div>
+                    <div class="form-col3">
+                        <div class="form-title" style="width: 55px;">多选</div>
+                        <div class="form-content">
+                            <div id="tree2" class="form-control" style="width: 200px;height: 100%;float: right;" data-skynetTree='{"isCheck":true}' data-sname="bbb" data-url="data.json"></div>
+                        </div>
+                    </div>
+                    <div class="form-col3">
+                        <div class="form-title" style="width: 55px;">默认值</div>
+                        <div class="form-content">
+                            <div id="tree3" class="form-control" style="width: 200px;height: 100%;float: right;" data-skynetTree='{"isCheck":true}'  data-sname="bbb" data-url="data.json" data-svalue="001001007,99999" data-stext="测试">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col3">
+                        <div class="form-title" style="width: 55px;">固定</div>
+                        <div class="form-content">
+                            <div id="tree4" style="width: 200px;float: right;" data-skynetTree='{"isCheck":true,"mode":"normal"}' data-url="data.json"></div>
+                        </div>
+                    </div>
+                    <div class="form-col3">
+                        <div class="form-title" style="width: 55px;">编辑</div>
+                        <div class="form-content">
+                            <div id="tree5" style="width: 200px;float: right;" data-skynetTree data-url="data.json"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
